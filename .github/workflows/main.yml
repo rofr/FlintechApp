@@ -15,7 +15,7 @@ jobs:
       run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
 
     - name: Build docker image
-      run: docker build -t daslob/flintechapp:latest
+      run: docker build -t daslob/flintechapp:latest .
 
     - name: Publish to docker hub
       run: docker push daslob/flintechapp:latest
